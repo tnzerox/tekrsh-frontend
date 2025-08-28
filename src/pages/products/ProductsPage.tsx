@@ -51,8 +51,8 @@ export const ProductsPage: React.FC = () => {
     deleteProduct,
   } = useProducts(filters);
 
-  const canManageProducts = checkPermission(PERMISSIONS.MANAGE_PRODUCTS);
-  const canViewProducts = checkPermission(PERMISSIONS.VIEW_PRODUCTS);
+  const canManageProducts = checkPermission(PERMISSIONS.VIEW_DASHBOARD);
+  const canViewProducts = checkPermission(PERMISSIONS.VIEW_DASHBOARD);
 
   useEffect(() => {
     if (!canViewProducts) {

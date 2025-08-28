@@ -16,9 +16,12 @@ import {
   SuperAdminLoginPage,
   AdminDashboardPage,
   SuperAdminDashboardPage,
+  ProductsPage,
 } from '@/pages';
 import { PERMISSIONS } from '@/utils/constants';
 import NotFound from "./pages/NotFound";
+import CategoryPage from './pages/category/CategoriesPage';
+import CategoriesPage from './pages/category/CategoriesPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -89,6 +92,31 @@ const App = () => {
                           <AdminLayout userType="admin">
                             <Suspense fallback={<Spin size="large" />}>
                               <AdminDashboardPage />
+                            </Suspense>
+                          </AdminLayout>
+                        </ProtectedRoute>
+                      }
+                    />
+
+                    <Route
+                      path="/admin/products"
+                      element={
+                        <ProtectedRoute permission={PERMISSIONS.VIEW_DASHBOARD} userType="admin">
+                          <AdminLayout userType="admin">
+                            <Suspense fallback={<Spin size="large" />}>
+                              <ProductsPage />
+                            </Suspense>
+                          </AdminLayout>
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/admin/categories"
+                      element={
+                        <ProtectedRoute permission={PERMISSIONS.VIEW_DASHBOARD} userType="admin">
+                          <AdminLayout userType="admin">
+                            <Suspense fallback={<Spin size="large" />}>
+                              <CategoriesPage />
                             </Suspense>
                           </AdminLayout>
                         </ProtectedRoute>

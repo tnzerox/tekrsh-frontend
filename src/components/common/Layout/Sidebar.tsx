@@ -38,6 +38,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle, userTyp
       path: '/admin/dashboard',
       permission: PERMISSIONS.VIEW_DASHBOARD,
     },
+    {
+      title: 'Products',
+      icon: StoreIcon,
+      path: '/admin/products',
+      permission: PERMISSIONS.VIEW_DASHBOARD,
+    },
+    {
+      title: 'Categories',
+      icon: StoreIcon,
+      path: '/admin/categories',
+      permission: PERMISSIONS.VIEW_DASHBOARD,
+    },
   ];
 
   const superAdminMenuItems: MenuItem[] = [
